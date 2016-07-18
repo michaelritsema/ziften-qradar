@@ -11,4 +11,4 @@ def zsearch():
     ip = request.args.get('context')
     url = base_url + 'ipaddresses/overview/' + ip 
     #return ""
-    return jsonify({'url': 'https://google.com'})
+    return jsonify({'url': url})
