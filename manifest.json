@@ -24,7 +24,7 @@
   "rest_methods": [
     {
       "name":"ziftensearch",
-      "url":"/search",
+      "url":"/ziftensearch",
       "method":"GET",
       "argument_names":["context"]
     }],
