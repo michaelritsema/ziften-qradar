@@ -35,7 +35,7 @@
       "description":"Ziften Smart Search",
       "icon":null,
       "rest_method":"ziftensearch",
-      "javascript":"window.open(result['url'])",
+      "javascript":"window.open('https://google.com')",
       "groups":[ "ipPopup" ],
       "required_capabilities":[ ]
     }]

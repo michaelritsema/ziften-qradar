@@ -20,4 +20,4 @@ def ziftensearch():
     ip = request.args.get('context')
     query = 'ipaddr:%s' % ipaddr
     url = base_url + 'ipaddresses/overview/' + ip 
-    return jsonify({'url': 'https://google.com'})
+    return jsonify({'url': url})
