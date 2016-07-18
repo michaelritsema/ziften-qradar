@@ -1,4 +1,4 @@
-__author__ = "Carbon Black <support@carbonblack.com>"
+__author__ = "Ziften <michael.ritsema@ziften.com>"
 
 import json
 from app import app
@@ -18,6 +18,5 @@ base_url = 'https://sales.cloud.ziften.com'
 @app.route('/ziftensearch', methods=['GET'])
 def ziftensearch():
     ip = request.args.get('context')
-    query = 'ipaddr:%s' % ipaddr
     url = base_url + 'ipaddresses/overview/' + ip 
-    return jsonify({'url': url})
+    return jsonify({'url': 'https://google.com'})
