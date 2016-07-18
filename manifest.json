@@ -14,7 +14,7 @@
   ],
   "rest_methods": [
     {
-      "name":"ziftensearch",
+      "name":"zsearch",
       "url":"/ziftensearch",
       "method":"GET",
       "argument_names":["context"]
@@ -25,7 +25,7 @@
       "text":"Ziften Smart Search",
       "description":"Ziften Smart Search",
       "icon":null,
-      "rest_method":"ziftensearch",
+      "rest_method":"zsearch",
       "javascript":"window.open(result['url'])",
       "groups":[ "ipPopup" ],
       "required_capabilities":[ ]
