@@ -17,13 +17,7 @@ import os
 import sqlite3
 import pprint
 
-
 base_url = 'https://sales.cloud.ziften.com'
-
-/ipaddresses/overview
-
-
-
 
 @app.route('/search', methods=['GET'])
 def search():
