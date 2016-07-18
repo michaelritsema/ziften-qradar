@@ -1,13 +1,8 @@
 __author__ = "Ziften <michael.ritsema@ziften.com>"
 
-import json
 from app import app
-from qpylib import qpylib
 from flask import request, render_template, redirect, jsonify, Response
-from collections import defaultdict
-import urlparse
-import dateutil.parser
-from functools import wraps
+
 
 base_url = 'https://sales.cloud.ziften.com'
 
