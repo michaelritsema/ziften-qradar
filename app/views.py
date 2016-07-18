@@ -6,16 +6,12 @@ from qpylib import qpylib
 from flask import request, render_template, redirect, jsonify, Response
 import urllib
 import config
-from cbapi import CbApi
 from collections import defaultdict
 import urlparse
 import dateutil.parser
 from functools import wraps
 import requests
-import traceback
 import os
-import sqlite3
-import pprint
 
 base_url = 'https://sales.cloud.ziften.com'
 
