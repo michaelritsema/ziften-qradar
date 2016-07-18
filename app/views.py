@@ -11,7 +11,7 @@ from functools import wraps
 
 base_url = 'https://sales.cloud.ziften.com'
 
-#@app.route('/ziftensearch', methods=['GET'])
+@app.route('/ziftensearch', methods=['GET'])
 def ziftensearch():
     ip = request.args.get('context')
     url = base_url + 'ipaddresses/overview/' + ip 

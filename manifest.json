@@ -12,15 +12,6 @@
       "required_capabilities": [ ]
     }
   ],
-  "configuration_pages": [
-    {
-      "text": "Ziften",
-      "description": "Ziften configuration settings",
-      "icon": "static/images/ziftenlogo.png",
-      "url": "ziftenconfig",
-      "required_capabilities": [ "ADMIN" ]
-    }
-  ],
   "rest_methods": [
     {
       "name":"ziftensearch",
@@ -35,7 +26,7 @@
       "description":"Ziften Smart Search",
       "icon":null,
       "rest_method":"ziftensearch",
-      "javascript":"window.open('https://google.com')",
+      "javascript":"window.open(result['url'])",
       "groups":[ "ipPopup" ],
       "required_capabilities":[ ]
     }]
