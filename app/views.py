@@ -68,12 +68,13 @@ def ziftensettings():
         if request.method == 'POST':
             base_url = request.form["base_url"]
             settings.set_base_url(request.form["base_url"])
+            render_template("closewindow.html")
 
     except Exception as ex:
         print ex
       
     base_url = settings.get_base_url()
-    return render_template("settings.html", base_url=base_url , test="x")
+    return render_template("settings.html", base_url=base_url)
 
 if bootstrap_server:
     app.run('0.0.0.0')
