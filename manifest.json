@@ -14,20 +14,102 @@
   ],
   "rest_methods": [
     {
-      "name":"zsearch",
-      "url":"/ziftensearch",
+      "name":"ipSearch",
+      "url":"/ipsearch",
       "method":"GET",
       "argument_names":["context"]
-    }],
-    "gui_actions": [
+    },
     {
-      "id":"GlobalSearchRightClick",
-      "text":"Ziften Smart Search",
-      "description":"Ziften Smart Search",
+      "name":"systemSearch",
+      "url":"/systemsearch",
+      "method":"GET",
+      "argument_names":["context"]
+    },
+    {
+      "name":"hostnameSearch",
+      "url":"/hostnamesearch",
+      "method":"GET",
+      "argument_names":["context"]
+    },
+    {
+      "name":"userSearch",
+      "url":"/usersearch",
+      "method":"GET",
+      "argument_names":["context"]
+    },
+    {
+      "name":"filenameSearch",
+      "url":"/filenamesearch",
+      "method":"GET",
+      "argument_names":["context"]
+    },
+    {
+      "name":"md5Search",
+      "url":"/md5search",
+      "method":"GET",
+      "argument_names":["context"]
+    }
+  ],
+  "gui_actions": [
+    {
+      "id":"IPSearchRightClick",
+      "text":"Ziften IP Search",
+      "description":"Ziften IP Search",
       "icon":null,
-      "rest_method":"zsearch",
+      "rest_method":"ipSearch",
       "javascript":"window.open(result['url'])",
       "groups":[ "ipPopup" ],
       "required_capabilities":[ ]
-    }]
+    },
+    {
+      "id":"SystemSearchRightClick",
+      "text":"Ziften System Search",
+      "description":"Ziften System Search",
+      "icon":null,
+      "rest_method":"systemSearch",
+      "javascript":"window.open(result['url'])",
+      "groups":[ "ipPopup" ],
+      "required_capabilities":[ ]
+    },
+    {
+      "id":"HostnameSearchRightClick",
+      "text":"Ziften Hostname Search",
+      "description":"Ziften Hostname Search",
+      "icon":null,
+      "rest_method":"hostnameSearch",
+      "javascript":"window.open(result['url'])",
+      "groups":[ "ipPopup" ],
+      "required_capabilities":[ ]
+    },
+    {
+      "id":"FilenameSearchRightClick",
+      "text":"Ziften Filename Search",
+      "description":"Ziften Filename Search",
+      "icon":null,
+      "rest_method":"filenameSearch",
+      "javascript":"window.open(result['url'])",
+      "groups":[ "ipPopup" ],
+      "required_capabilities":[ ]
+    },
+    {
+      "id":"UserSearchRightClick",
+      "text":"Ziften Username Search",
+      "description":"Ziften Username Search",
+      "icon":null,
+      "rest_method":"userSearch",
+      "javascript":"window.open(result['url'])",
+      "groups":[ "ipPopup" ],
+      "required_capabilities":[ ]
+    },
+    {
+      "id":"MD5SearchRightClick",
+      "text":"Ziften MD5 Search",
+      "description":"Ziften MD5 Search",
+      "icon":null,
+      "rest_method":"md5Search",
+      "javascript":"window.open(result['url'])",
+      "groups":[ "ipPopup" ],
+      "required_capabilities":[ ]
+    }
+  ]
 }
