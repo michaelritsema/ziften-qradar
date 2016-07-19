@@ -1,9 +1,11 @@
 __author__ = "Ziften <michael.ritsema@ziften.com>"
 
+bootstrap_server = False 
+
 if __name__ == "__main__":
     from flask import Flask
     app = Flask(__name__)
-
+    bootstrap_server = True
 else:
     from app import app
 
@@ -59,19 +61,19 @@ def md5Search():
 
 # Need to verify admin priv
 @app.route('/ziftensettings', methods=['GET', 'POST'])
-def settings():
-    error_msgs = []
-    base_url = settings.get_base_url()
+def ziftensettings():
+    base_url = ""
     try:
+        base_url = settings.get_base_url()
         if request.method == 'POST':
             base_url = request.form["base_url"]
             settings.set_base_url(request.form["base_url"])
-            base_url = settings.get_base_url()
-            if error_msgs:
-                pass
-            else:
-                return render_template("closewindow.html")
-    except:
-        pass
 
-    return render_template("settings.html", base_url=base_url)
+    except Exception as ex:
+        print ex
+      
+    base_url = settings.get_base_url()
+    return render_template("settings.html", base_url=base_url , test="x")
+
+if bootstrap_server:
+    app.run('0.0.0.0')
