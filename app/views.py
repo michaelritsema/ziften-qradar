@@ -61,10 +61,12 @@ def md5Search():
 @app.route('/ziftensettings', methods=['GET', 'POST'])
 def settings():
     error_msgs = []
+    base_url = settings.get_base_url()
     try:
         if request.method == 'POST':
             base_url = request.form["base_url"]
             settings.set_base_url(request.form["base_url"])
+            base_url = settings.get_base_url()
             if error_msgs:
                 pass
             else:
