@@ -12,6 +12,15 @@
       "required_capabilities": [ ]
     }
   ],
+  "configuration_pages": [
+    {
+      "text": "Ziften",
+      "description": "Ziften Settings",
+      "icon": "static/images/ziften_red_logo.png",
+      "url": "ziftensettings",
+      "required_capabilities": [ "ADMIN" ]
+    }
+  ],
   "rest_methods": [
     {
       "name":"ipSearch",

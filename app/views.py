@@ -50,3 +50,21 @@ def md5Search():
     c = request.args.get('context')
     url = base_url + md5_search_url + c 
     return jsonify({'url': url})
+
+# Need to verify admin priv
+@app.route('/ziftensettings', methods=['GET', 'POST'])
+def settings():
+    error_msgs = []
+    try:
+        if request.method == 'POST':
+        	base_url = request.form["base_url"]
+            settings.set_base_url(request.form["base_url"])
+            if error_msgs:
+                pass
+            else:
+                return render_template("closewindow.html")
+    except:
+        app.logger.error(traceback.format_exc())
+        error_msgs.append(traceback.format_exc())
+
+    return render_template("settings.html", base_url=base_url)   
