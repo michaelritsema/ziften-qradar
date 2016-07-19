@@ -57,14 +57,13 @@ def settings():
     error_msgs = []
     try:
         if request.method == 'POST':
-        	base_url = request.form["base_url"]
+            base_url = request.form["base_url"]
             settings.set_base_url(request.form["base_url"])
             if error_msgs:
                 pass
             else:
                 return render_template("closewindow.html")
     except:
-        app.logger.error(traceback.format_exc())
-        error_msgs.append(traceback.format_exc())
+        pass
 
-    return render_template("settings.html", base_url=base_url)   
+    return render_template("settings.html", base_url=base_url)
