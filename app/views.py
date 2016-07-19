@@ -1,6 +1,12 @@
 __author__ = "Ziften <michael.ritsema@ziften.com>"
 
-from app import app
+if __name__ == "__main__":
+    from flask import Flask
+    app = Flask(__name__)
+
+else:
+    from app import app
+
 from flask import request, render_template, redirect, jsonify, Response
 import settings
 
