@@ -16,7 +16,7 @@
     {
       "text": "Ziften",
       "description": "Ziften Settings",
-      "icon": "static/images/ziften_red_logo.png",
+      "icon": "static/images/ziften.ico",
       "url": "ziftensettings",
       "required_capabilities": [ "ADMIN" ]
     }
