@@ -12,6 +12,15 @@
       "required_capabilities": [ "ADMIN" ]
     }
   ],
+  "areas": [
+    {
+      "id": "Ziften",
+      "text": "Ziften",
+      "description": "Ziften for QRadar",
+      "url": "index",
+      "required_capabilities": [ ]
+    }
+  ],
   "rest_methods": [
     {
       "name":"ipSearch",

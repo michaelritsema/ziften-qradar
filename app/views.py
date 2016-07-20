@@ -78,3 +78,7 @@ def ziftensettings():
 
 if bootstrap_server:
     app.run('0.0.0.0')
+
+@app.route('/index', methods=['GET','POST'])
+def index():
+    return render_template("consoleframe.html", base_url=settings.get_base_url())
