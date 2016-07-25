@@ -1,50 +1,31 @@
 __author__ = "Ziften <michael.ritsema@ziften.com>"
 
-bootstrap_server = False 
-
-if __name__ == "__main__":
-    from flask import Flask
-    app = Flask(__name__)
-    bootstrap_server = True
-else:
-    from app import app
-
+from app import app
 from flask import request, render_template, redirect, jsonify, Response
 import settings
 
-
-
-
-md5_search_url = '/binaries/binaries?imagefilemd5__contains='
-filename_search_url = '/applications/applications?most_prevalent_filename__contains='
-system_search_url = '/systems/systems?system__contains='
 ip_search_url = '/ipaddresses/ipaddresses?ipaddress__cidr='
-hostname_search_url ='/hostnames/hostnames?hostname__contains='
-user_search_url = '/osusers/osusers?user_account__contains='
 
+def ipreportmanager(report_id, ip):
+    url = '/ipreportmanager/%s/%s'
+    return settings.get_base_url() + (url % (ip,report_id))
 
-@app.route('/usersearch', methods=['GET'])
-def userSearch():
+@app.route('/portsearch', methods=['GET'])
+def portSearch():
     c = request.args.get('context')
-    url = settings.get_base_url() + user_search_url + c 
+    url = ipreportmanager(705,c)
     return jsonify({'url': url})
 
 @app.route('/hostnamesearch', methods=['GET'])
 def hostnameSearch():
     c = request.args.get('context')
-    url = settings.get_base_url() + hostname_search_url + c 
+    url = ipreportmanager(707,c)
     return jsonify({'url': url})
 
 @app.route('/systemsearch', methods=['GET'])
 def systemSearch():
     c = request.args.get('context')
-    url = settings.get_base_url() + system_search_url + c 
-    return jsonify({'url': url})
-
-@app.route('/filenamesearch', methods=['GET'])
-def filenameSearch():
-    c = request.args.get('context')
-    url = settings.get_base_url() + filename_search_url + c 
+    url = ipreportmanager(701,c)
     return jsonify({'url': url})
 
 @app.route('/ipsearch', methods=['GET'])
@@ -56,7 +37,7 @@ def ipSearch():
 @app.route('/md5search', methods=['GET'])
 def md5Search():
     c = request.args.get('context')
-    url = settings.get_base_url() + md5_search_url + c 
+    url = ipreportmanager(702,c)
     return jsonify({'url': url})
 
 # Need to verify admin priv
@@ -75,9 +56,6 @@ def ziftensettings():
       
     base_url = settings.get_base_url()
     return render_template("settings.html", base_url=base_url)
-
-if bootstrap_server:
-    app.run('0.0.0.0')
 
 @app.route('/index', methods=['GET','POST'])
 def index():

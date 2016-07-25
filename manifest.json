@@ -32,14 +32,8 @@
       "argument_names":["context"]
     },
     {
-      "name":"userSearch",
-      "url":"/usersearch",
-      "method":"GET",
-      "argument_names":["context"]
-    },
-    {
-      "name":"filenameSearch",
-      "url":"/filenamesearch",
+      "name":"portSearch",
+      "url":"/portsearch",
       "method":"GET",
       "argument_names":["context"]
     },
@@ -82,31 +76,21 @@
       "required_capabilities":[ ]
     },
     {
-      "id":"FilenameSearchRightClick",
-      "text":"Ziften Filename Search",
-      "description":"Ziften Filename Search",
-      "icon":null,
-      "rest_method":"filenameSearch",
-      "javascript":"window.open(result['url'])",
-      "groups":[ "ipPopup" ],
-      "required_capabilities":[ ]
-    },
-    {
-      "id":"UserSearchRightClick",
-      "text":"Ziften Username Search",
-      "description":"Ziften Username Search",
-      "icon":null,
-      "rest_method":"userSearch",
-      "javascript":"window.open(result['url'])",
-      "groups":[ "ipPopup" ],
-      "required_capabilities":[ ]
-    },
-    {
       "id":"MD5SearchRightClick",
       "text":"Ziften MD5 Search",
       "description":"Ziften MD5 Search",
       "icon":null,
       "rest_method":"md5Search",
+      "javascript":"window.open(result['url'])",
+      "groups":[ "ipPopup" ],
+      "required_capabilities":[ ]
+    },
+    {
+      "id":"PortSearchRightClick",
+      "text":"Ziften MD5 Search",
+      "description":"Ziften MD5 Search",
+      "icon":null,
+      "rest_method":"portSearch",
       "javascript":"window.open(result['url'])",
       "groups":[ "ipPopup" ],
       "required_capabilities":[ ]
