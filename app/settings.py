@@ -10,7 +10,8 @@ def get_base_url():
 		print e
 		try:
 			f = open('settings.txt','w')
-			f.write("https://ZIFTEN_CONSOLE_URL_NOT_CONFIGURED.cloud.ziften.com")
+			url = "https://ZIFTEN_CONSOLE_URL_NOT_CONFIGURED.cloud.ziften.com" 
+			f.write(url)
 			f.close()
 		except Exception as e:
 			print e
