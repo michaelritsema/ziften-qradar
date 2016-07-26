@@ -2,7 +2,7 @@
   "name": "Ziften",
   "description": "Ziften App for IBM QRadar",
   "version": "0.0.1",
-  "uuid": "23a1c1f0-4d12-11e6-beb8-9e71128cae77",
+  "uuid": "29a1c1f0-4d12-11e6-beb8-9e71128cae77",
   "configuration_pages": [
     {
       "text": "Ziften",
