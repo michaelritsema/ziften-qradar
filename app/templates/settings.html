@@ -1,5 +1,46 @@
+<html>
+<body>
 <form method="POST" action-"ziftensettings">
-Ziften Console URL: <input style="width:400px" type="text" name="base_url" value="{{base_url}}"> 
+Ziften Console URL: <input style="width:400px" type="text" id="ziften_url" name="base_url" value="{{base_url}}"> 
+<input type="button" id="test" value="test"> </input>
+<p value="" id="result"> </p>
+
 <br/>
-<input type="submit"></input>
+<input id="submit-button" type="submit" disabled></input>
 </form>
+
+<script src="/static/js/jquery.min.js"></script>
+
+
+
+<script>
+    var isZiften = false;
+
+    var testInput = function(host){
+        console.log("Testing host: " + host);
+        myimg = new Image();
+        myimg.onload = function() {
+            isZiften = myimg.naturalHeight == 1125 ? "Success: Reached Ziften Console" : "Failure: Could not reach Ziften Console. Is the URL Valid?";
+            $('#result').text(isZiften);
+            $('#submit-button').prop('disabled', false)
+        };
+
+        myimg.onerror = function() {
+            console.log("error");
+            isZiften = "Failure: Could not reach Ziften Console. Is the URL valid?";
+            $('#result').text(isZiften);
+             $('#submit-button').prop('disabled', true)
+        };
+        myimg.src = host + "/resources/thirdparty/app/img/ziften_red_logo-gray.png";
+    };
+    $(function() {
+                $('#test').click(function() {
+                    host = $('#ziften_url').val();
+                    testInput(host);
+            });
+        });
+
+</script>
+
+</body>
+</html>
