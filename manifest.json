@@ -88,7 +88,7 @@
     {
       "id":"PortSearchRightClick",
       "text":"Ziften Port Search",
-      "description":"Ziften MD5 Search",
+      "description":"Ziften Port Search",
       "icon":null,
       "rest_method":"portSearch",
       "javascript":"window.open(result['url'])",
