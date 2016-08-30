@@ -2,7 +2,7 @@ import os
 import qpylib
 
 def get_base_url():
-	settings_filename = qpylib.defget_store_path(relative_path="") + "/" + 'settings.txt'
+	settings_filename = qpylib.qpylib.get_store_path(relative_path="") + 'settings.txt'
 
 	url = ""
 	try:
