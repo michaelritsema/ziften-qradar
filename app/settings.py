@@ -21,6 +21,7 @@ def get_base_url():
  	return url
 
 def set_base_url(url):
+	settings_filename = qpylib.qpylib.get_store_path(relative_path="") + 'settings.txt'
 	try:
 		f = open(settings_filename,'w')
 		f.write(url)
